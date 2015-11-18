@@ -4,6 +4,19 @@
 
 void main(){
  Table *table = t_init();
+ t_addColumn(table);
  t_addRow(table);
- //t_toString(table);
+ t_addRow(table);
+ t_addColumn(table);
+ t_addColumn(table);
+ t_addRow(table);
+ t_addRow(table);
+ t_addColumn(table);
+ t_addColumn(table);
+ t_addRow(table);
+ t_addRow(table);
+ t_addColumn(table);
+ t_addRow(table);
+ t_addRow(table);
+ t_toString(table);
 }
