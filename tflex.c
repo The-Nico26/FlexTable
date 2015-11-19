@@ -158,7 +158,9 @@ void t_toString(Table *table){
    index_y++;
   }
 }
-
+int t_size(Table *table){
+ return ((table->x*table->y*sizeof(Element)) + sizeof(Table));
+}
 void t_secuTable(Table *table){
  if(table == NULL)
   printf("[WARNING] Table is not initialize !\n");
