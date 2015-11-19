@@ -102,7 +102,19 @@ Element *t_getElement(Table *table, int x1, int y1){
  }
  return NULL;
 }
-
+void t_setElement(Table *table, int x, int y, TYPE_VARIABLE valeur){
+ Element *element = table->start;
+ for(int a = 0; a < x && element != NULL; a++){
+  element = element->right;
+ }
+ for(int a = 0; a < y && element != NULL; a++){
+  element = element->down;
+ }
+ if(element == NULL){
+  return;
+ }
+ element->valeur = valeur;
+}
 void t_toString(Table *table){
   Element *x = table->start;
   if(x == NULL){
