@@ -3,21 +3,9 @@
 #include "tflex.h"
 
 void main(){
- Table *table = t_init();
- t_addColumn(table);
- t_addRow(table);
- t_addRow(table);
- t_addColumn(table);
- t_addColumn(table);
- t_addRow(table);
- t_addRow(table);
- t_addColumn(table);
- t_addColumn(table);
- t_addRow(table);
- t_addRow(table);
- t_addColumn(table);
- t_addRow(table);
- t_addRow(table);
- t_setElement(table, 5, 5, 10);
+ //Table *table = t_initEmpty();
+ //t_addRow(table);
+ Table *table = t_init(5, 4);
+ //t_setElement(table, 5, 5, 10);
  t_toString(table);
 }

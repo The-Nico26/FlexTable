@@ -20,7 +20,7 @@ struct Table{
  short x; //Length row
 };
 
-Table *t_init(){
+Table *t_initEmpty(){
  Table *table = malloc(sizeof(Table));
  t_secuTable(table);
  table->start = NULL;
@@ -30,7 +30,22 @@ Table *t_init(){
  t_addElement(table, 0, 0, 0);
  return table;
 }
-
+Table *t_init(int x, int y){
+ Table *table = malloc(sizeof(Table));
+ t_secuTable(table);
+ table->start = NULL;
+ table->end = NULL;
+ table->y = 0;
+ table->x = 0;
+ t_addElement(table, 0, 0, 0);
+ for(;x>0;x--){
+  t_addRow(table);
+ }
+ for(;y>0;y--){
+  t_addColumn(table);
+ }
+ return table;
+}
 void t_addRow(Table *table){
  table->x++;
  for(int y = 0; y <= table->y; y++){
@@ -80,6 +95,7 @@ void t_addElement(Table *table, TYPE_VARIABLE valeur, int x, int y){
  if(x == 0 && y == 0){
   table->start = element;
  }
+
 }
 
 Element *t_getElement(Table *table, int x1, int y1){

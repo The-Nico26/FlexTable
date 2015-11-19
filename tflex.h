@@ -4,7 +4,8 @@ typedef struct Row Row;
 typedef struct Column Column;
 typedef struct Table Table;
 
-Table *t_init();
+Table *t_initEmpty();
+Table *t_init(int x, int y);
 void t_secuTable(Table *table);
 void t_addRow(Table *table);
 void t_addColumn(Table *table);
